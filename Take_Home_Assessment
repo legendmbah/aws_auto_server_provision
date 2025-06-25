@@ -1,0 +1,41 @@
+Take-Home Exercise: Proxmox VM Provisioning Automation
+
+Objective
+Create a script or automation workflow that makes it fast and repeatable to spin up multiple Rocky Linux 9.6 virtual machines on a single Proxmox VE server. The goal is to simplify the process of defining and launching new VMs with pre-defined configuration and initial setup tasks.
+
+Requirements
+Your solution should:
+1.	Provision VMs on a Single Proxmox Server
+o	Use the Proxmox API or CLI to create VMs on a single Proxmox VE host.
+o	Allow configuration of:
+    	Hostname
+    	Static IP address or MAC address
+    	CPU, RAM, and disk size
+
+2.	Base OS Setup
+o	Use either:
+    	A pre-built Rocky 9.6 cloud-init template
+    	An ISO with unattended install (kickstart or preseed)
+o	Ensure VMs boot to a usable system with SSH enabled and an admin user created.
+
+3.	Post-Provisioning Configuration
+o	Automate additional configuration using Ansible:
+    	Package installation (e.g. a couple example packages, whatever you want)
+    	OS-level configuration (e.g. SSH settings, setting up cockpit, etc.)
+o	VMs should be ready for further use or integration once the script completes.
+
+4.	Usability
+o	Accept a variable list of VMs to create (with desired hostname, IP, MAC, etc.).
+o	Clearly document any prerequisites (e.g., template setup, Proxmox API credentials, storage pool name).
+
+Deliverables
+•	A script or automation workflow (Ansible, Bash, Python, or similar)
+•	An inventory or config file to define the list of VMs
+•	A README with:
+o	Setup instructions
+o	Execution steps
+o	Assumptions and limitations
+
+NOTES
+•	This exercise targets a single Proxmox VE server — no cluster or multi-node logic is required.
+•	Simplicity, clarity, and reproducibility are key. Bonus for making the workflow easily portable or extendable.

@@ -1,0 +1,16 @@
+---
+- name: Post-provision configuration for VMs
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install basic system tools using DNF
+      dnf:
+        name:
+          - wget
+          - git
+          - htop
+          - unzip
+          - httpd  
+          - tree
+        state: present
